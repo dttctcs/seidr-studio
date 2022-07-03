@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollArea } from '../../common/components/Miscellaneous';
 import { Table } from '../table';
 
-export function MainWrapper(api) {
+export function ApiWrapper(api) {
   const getComponent = (api) => {
     if (api.type === 'crud') {
       return <Table key={api.path} {...api} />;

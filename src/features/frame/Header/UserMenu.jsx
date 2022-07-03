@@ -33,7 +33,7 @@ const securityRoutes = {
   },
 };
 
-const applyStyles = createStyles(theme => ({
+const applyStyles = createStyles((theme) => ({
   root: {
     marginLeft: 'auto',
   },
@@ -64,7 +64,7 @@ export function UserMenu() {
     signout();
   };
 
-  const securityApis = apis.filter(api => api.level === 'security' && user.permissions.includes(api.permission_name));
+  const securityApis = apis.filter((api) => api.level === 'security' && user.permissions.includes(api.permission_name));
   return (
     <Menu
       classNames={{ root: classes.root, label: classes.label, item: classes.item }}
@@ -94,7 +94,7 @@ export function UserMenu() {
           </Text>
         </Group>
         <Text size="xs" color="dimmed">
-          {user.roles.map(role => role.name).join(', ')}{' '}
+          {user.roles.map((role) => role.name).join(', ')}{' '}
         </Text>
       </Stack>
       <Divider sx={{ my: 2 }} />
@@ -119,13 +119,14 @@ export function UserMenu() {
                 </Menu.Item>
               );
             }
+            return null;
           })}
         </>
       ) : null}
 
       <Menu.Label sx={{ typography: 'subtitle2', p: 0.5, mt: 1, mb: 0.5 }}>User</Menu.Label>
 
-      <Menu.Item icon={<User size={16} color="gray" />} onClick={handleLogout}>
+      <Menu.Item icon={<User size={16} color="gray" />} onClick={() => navigate('profile')}>
         <Text size="xs" color="dimmed">
           Profile
         </Text>

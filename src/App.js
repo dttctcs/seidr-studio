@@ -4,7 +4,8 @@ import { useSeidrAuth, useSeidrInfo } from 'seidrui';
 
 import ProtectedPage from './pages/ProtectedPage.jsx';
 import Login from './pages/Login';
-import { Frame, MainWrapper } from './features/frame';
+import Profile from './pages/Profile.jsx';
+import { Frame, ApiWrapper } from './features/frame';
 
 function App() {
   const { apis } = useSeidrInfo();
@@ -21,6 +22,7 @@ function App() {
     return null;
   }
 
+  console.log(apis);
   return (
     <Routes>
       <Route exact={true} path="/login" element={<Login />} />
@@ -35,9 +37,10 @@ function App() {
       >
         {apis &&
           apis.map((api, index) => {
-            return <Route key={index} path={api.path} element={<MainWrapper {...api} />} />;
+            return <Route key={index} path={api.path} element={<ApiWrapper {...api} />} />;
           })}
 
+        <Route path="profile" element={<Profile />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>

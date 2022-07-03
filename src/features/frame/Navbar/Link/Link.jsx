@@ -2,7 +2,7 @@ import React from 'react';
 import { useMatch, Link as RouterLink } from 'react-router-dom';
 import applyStyles from './Link.styles';
 
-import { Button, Text, ThemeIcon } from '@mantine/core';
+import { Button, Text } from '@mantine/core';
 
 export function Link({ Icon, label, navbarOpened, ...props }) {
   const selected = useMatch(props.path);

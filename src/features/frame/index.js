@@ -1,2 +1,2 @@
 export { Frame } from './Frame';
-export { MainWrapper } from './MainWrapper';
+export { ApiWrapper } from './ApiWrapper';

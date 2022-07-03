@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSeidrInfo } from 'seidrui';
 
-import { ActionIcon, Divider, Navbar as MantineNavbar, Stack, Text, Title } from '@mantine/core';
+import { ActionIcon, Divider, Navbar as MantineNavbar, Stack, Title } from '@mantine/core';
 import { Link } from './Link';
 import * as icons from 'tabler-icons-react';
 
