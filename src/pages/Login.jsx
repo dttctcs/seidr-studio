@@ -12,7 +12,7 @@ import { FormPassword } from '../common/components/Inputs/FormPassword';
 
 import { InfoCircle } from 'tabler-icons-react';
 
-const applyStyles = createStyles(theme => ({
+const applyStyles = createStyles((theme) => ({
   root: {
     position: 'fixed',
     inset: 0,
@@ -55,7 +55,7 @@ const schema = yup.object({
 });
 
 function Login() {
-  const auth = useSeidrAuth();
+  const { user, signin } = useSeidrAuth();
   const { classes } = applyStyles();
 
   const { handleSubmit, control } = useForm({
@@ -64,11 +64,11 @@ function Login() {
     resolver: yupResolver(schema),
   });
 
-  const submit = async data => {
-    auth.signin(data);
+  const submit = async (data) => {
+    signin(data);
   };
 
-  if (auth.user) {
+  if (user) {
     return <Navigate to="/" />;
   }
 
@@ -81,7 +81,7 @@ function Login() {
             Loggen Sie sich in die Admin Plattform ein
           </Text>
           <Box className={classes.content}>
-            <form onSubmit={auth.isLoading ? null : handleSubmit(submit)}>
+            <form onSubmit={handleSubmit(submit)}>
               <Stack spacing="sm">
                 <Box>
                   <Stack spacing={3}>

@@ -22,7 +22,6 @@ function App() {
     return null;
   }
 
-  console.log(apis);
   return (
     <Routes>
       <Route exact={true} path="/login" element={<Login />} />

@@ -2,6 +2,7 @@
   "name": "seidr-studio",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@mantine/core": "^4.2.11",
     "@mantine/hooks": "^4.2.11",

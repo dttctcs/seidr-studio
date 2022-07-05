@@ -5,7 +5,7 @@ import { Table } from '../table';
 
 export function ApiWrapper(api) {
   const getComponent = (api) => {
-    if (api.type === 'crud') {
+    if (api.type === 'table') {
       return <Table key={api.path} {...api} />;
     }
   };
