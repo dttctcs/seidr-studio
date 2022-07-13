@@ -45,7 +45,7 @@ export function Navbar() {
               <React.Fragment key={section}>
                 {opened ? (
                   <Title sx={(theme) => ({ paddingBottom: theme.spacing.sm })} order={6}>
-                    {name}
+                    Table
                   </Title>
                 ) : (
                   <Divider my="md" />
